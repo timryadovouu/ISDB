@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="icon" href="/static/icons/loginIcon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form id="loginForm">
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="username" required /><br /><br />
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <button type="submit">Login</button>
+      </form>
+      <p>First time? <a href="/register">Register</a></p>
+      <a href="/home" class="green-button">Home page</a>
+    </div>
+
+    <script>
+      // ================ login ================
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          const response = await fetch("/login/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `username=${encodeURIComponent(
+              email
+            )}&password=${encodeURIComponent(password)}`,
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            // Сохраняем токен в localStorage
+            localStorage.setItem("access_token", data.access_token);
+            // Перенаправляем на страницу базы данных
+            window.location.href = "/tables";
+          } else {
+            const error = await response.json();
+            alert("Login failed: " + error.detail);
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,445 @@
+/* ===================================== MAIN ===================================== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #29cfae;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  padding-top: 15px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================== BUTTONS ===================================== */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.green-button {
+  display: inline-block;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  line-height: 16px;
+}
+
+.green-button:hover {
+  background-color: #218838;
+  text-decoration: none;
+}
+
+.red-button {
+  display: inline-block;
+  padding: 12px;
+  background-color: #c44620;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  line-height: 16px;
+}
+
+.red-button:hover {
+  background-color: #ff5900;
+  text-decoration: none;
+}
+
+.blue-button {
+  display: inline-block;
+  padding: 12px;
+  background-color: #5759bb;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 16px;
+}
+
+.blue-button:hover {
+  background-color: #6980dd;
+  text-decoration: none;
+}
+
+/* ===================================== TABLE STYLES ===================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-email {
+  background: #e9ecef;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: #495057;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.table-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.table-card a {
+  text-decoration: none;
+  color: #212529;
+  font-weight: 500;
+  font-size: 1.1em;
+  display: block;
+  padding: 1rem;
+  transition: color 0.2s ease;
+}
+
+.table-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #29cfae;
+}
+
+.table-card:hover a {
+  color: #29cfae;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .user-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .red-button {
+    width: 100%;
+  }
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+}
+
+th {
+  background-color: #29cfae;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+#dataTable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Обновленный контейнер для таблицы */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* Стили для кнопок внутри таблицы */
+.action-btn {
+  padding: 6px 12px;
+  margin: 2px;
+  font-size: 0.9em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.action-btn.edit {
+  background-color: #4caf50;
+  border: 1px solid #45a049;
+}
+
+.action-btn.delete {
+  background-color: #f44336;
+  border: 1px solid #da190b;
+}
+
+.action-btn:hover {
+  filter: brightness(90%);
+  transform: translateY(-2px);
+}
+
+.json-toggle {
+  background: #29cfae;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2px;
+}
+
+pre {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left;
+  max-width: 400px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.json-view {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  white-space: pre-wrap;
+  max-width: 400px;
+  max-height: 200px;
+  overflow: auto;
+  text-align: left;
+  margin: 5px 0;
+}
+
+/* Стили модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* ===================================== addForm STYLES ===================================== */
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #29cfae;
+  padding-bottom: 0.5rem;
+}
+
+#addForm {
+  display: grid;
+  gap: 0.6rem;
+}
+
+#addForm input,
+#addForm select,
+#addForm textarea {
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin: 0 10px;
+  border: 2px solid #ecf0f1;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#addForm label {
+  display: block;
+  padding: 0 10px;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  color: #34495e;
+}
+
+#addForm input:focus {
+  border-color: #29cfae;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(41, 207, 174, 0.2);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.form-buttons button {
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.form-buttons button[type="submit"] {
+  background: #29cfae;
+  color: white;
+  border: none;
+}
+
+.form-buttons button[type="button"] {
+  background: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.form-buttons button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
